@@ -26,7 +26,7 @@ parser.add_argument('--num_res_blocks', type=int, default=16, help='number of re
 # train parameters
 parser.add_argument('--input_dir', type=str, default='data/train/input', help='dir of input images')
 parser.add_argument('--ref_dir', type=str, default='data/train/ref', help='dir of reference images')
-parser.add_argument('--map_dir', type=str, default='data/train/map', help='dir of texture maps of reference images')
+parser.add_argument('--map_dir', type=str, default='data/train/map_321', help='dir of texture maps of reference images')
 parser.add_argument('--batch_size', type=int, default=9)
 parser.add_argument('--num_init_epochs', type=int, default=5)
 parser.add_argument('--num_epochs', type=int, default=50)
@@ -40,7 +40,6 @@ parser.add_argument('--w_adv', type=float, default=1e-6, help='weight of adversa
 parser.add_argument('--w_bp', type=float, default=0.0, help='weight of back projection loss')
 parser.add_argument('--w_rec', type=float, default=1.0, help='weight of reconstruction loss')
 parser.add_argument('--vgg_perceptual_loss_layer', type=str, default='relu5_1', help='the VGG19 layer name to compute perceptrual loss')
-parser.add_argument('--vgg_texture_loss_layer', type=str, default='relu3_1', help='the VGG19 layer name to compute texture loss based on Gram matrix')
 parser.add_argument('--is_WGAN_GP', type=str2bool, default=True, help='whether use WGAN-GP')
 parser.add_argument('--is_L1_loss', type=str2bool, default=True, help='whether use L1 norm')
 parser.add_argument('--param_WGAN_GP', type=float, default=10, help='parameter for WGAN-GP')
@@ -58,6 +57,8 @@ args = parser.parse_args()
 if args.is_train:
 
     # record parameters to file
+    if args.save_dir is None:
+        args.save_dir = 'default_save_dir'
     if not os.path.exists(args.save_dir):
         os.makedirs(args.save_dir)
     with open(os.path.join(args.save_dir, 'arguments.txt'), 'w') as f:
@@ -86,7 +87,6 @@ if args.is_train:
         use_init_model_only=args.use_init_model_only,
         weights=(args.w_per, args.w_tex, args.w_adv, args.w_bp, args.w_rec),
         vgg_perceptual_loss_layer=args.vgg_perceptual_loss_layer,
-        vgg_texture_loss_layer=args.vgg_texture_loss_layer,
         is_WGAN_GP=args.is_WGAN_GP,
         is_L1_loss=args.is_L1_loss,
         param_WGAN_GP=args.param_WGAN_GP,
@@ -95,21 +95,22 @@ if args.is_train:
         use_lower_layers_in_per_loss=args.use_lower_layers_in_per_loss
     )
 else:
-    # read recorded arguments
-    fixed_arguments = ['srntt_model_path', 'vgg19_model_path', 'save_dir', 'num_res_blocks', 'use_weight_map']
-    if os.path.exists(os.path.join(args.save_dir, 'arguments.txt')):
-        with open(os.path.join(args.save_dir, 'arguments.txt'), 'r') as f:
-            for arg, line in zip(sorted(vars(args)), f.readlines()):
-                arg_name, arg_value = line.strip().split('\t')
-                if arg_name in fixed_arguments:
-                    fixed_arguments.remove(arg_name)
-                    try:
-                        if isinstance(getattr(args, arg_name), bool):
-                            setattr(args, arg_name, str2bool(arg_value))
-                        else:
-                            setattr(args, arg_name, type(getattr(args, arg_name))(arg_value))
-                    except:
-                        print('Unmatched arg_name: %s!' % arg_name)
+    if args.save_dir is not None:
+        # read recorded arguments
+        fixed_arguments = ['srntt_model_path', 'vgg19_model_path', 'save_dir', 'num_res_blocks', 'use_weight_map']
+        if os.path.exists(os.path.join(args.save_dir, 'arguments.txt')):
+            with open(os.path.join(args.save_dir, 'arguments.txt'), 'r') as f:
+                for arg, line in zip(sorted(vars(args)), f.readlines()):
+                    arg_name, arg_value = line.strip().split('\t')
+                    if arg_name in fixed_arguments:
+                        fixed_arguments.remove(arg_name)
+                        try:
+                            if isinstance(getattr(args, arg_name), bool):
+                                setattr(args, arg_name, str2bool(arg_value))
+                            else:
+                                setattr(args, arg_name, type(getattr(args, arg_name))(arg_value))
+                        except:
+                            print('Unmatched arg_name: %s!' % arg_name)
 
     srntt = SRNTT(
         srntt_model_path=args.srntt_model_path,

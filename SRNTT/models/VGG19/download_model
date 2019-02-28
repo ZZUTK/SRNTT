@@ -1,0 +1,4 @@
+The VGG19 model will be automatically downloaded from http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat
+
+If the automatic download fails, please manually download the VGG19 model from MatConvNet. 
+The file vgg19.py may need to be modified correspondingly. 

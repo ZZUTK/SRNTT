@@ -1,0 +1,160 @@
+2019-02-28 01:54:00,179 root  INFO     Testing mode
+2019-02-28 01:54:00,204 root  INFO     Building graph ...
+2019-02-28 01:54:00,223 root  INFO     Build SRNTT model
+2019-02-28 01:54:02,889 root  INFO     Build VGG19 model
+2019-02-28 01:54:05,562 root  INFO     Initialize the swapper
+2019-02-28 01:54:05,564 root  INFO     Loading models ...
+2019-02-28 01:54:11,709 root  INFO     SUCCESS load SRNTT/models/SRNTT/srntt.npz
+2019-02-28 01:54:11,709 root  INFO     ********** Start testing **********
+2019-02-28 01:54:11,709 root  INFO     Get VGG19 Feature Maps
+2019-02-28 01:54:11,709 root  INFO     	[1/2] Getting feature map of Ref image ...
+2019-02-28 01:54:12,353 root  INFO     	[2/2] Getting feature map of LR->SR Ref image ...
+2019-02-28 01:54:13,003 root  INFO     Patch-Wise Matching and Swapping
+2019-02-28 01:54:13,003 root  INFO     	Patch 001/001
+2019-02-28 01:54:13,004 root  INFO     	Getting feature map of input LR image ...
+2019-02-28 01:54:13,338 root  INFO     	Matching and swapping features ...
+2019-02-28 01:54:20,304 root  INFO     Obtain SR patches
+2019-02-28 01:54:26,693 root  INFO     Saved to demo_testing_srntt/tmp/srntt_00000.png
+2019-02-28 01:54:26,693 root  INFO     Reconstruct SR image
+2019-02-28 01:54:26,870 root  INFO     Saved results to folder demo_testing_srntt
+2019-02-28 01:54:28,336 root  INFO     Testing mode
+2019-02-28 01:54:28,353 root  INFO     Building graph ...
+2019-02-28 01:54:28,371 root  INFO     Build SRNTT model
+2019-02-28 01:54:31,069 root  INFO     Build VGG19 model
+2019-02-28 01:54:33,595 root  INFO     Initialize the swapper
+2019-02-28 01:54:33,597 root  INFO     Loading models ...
+2019-02-28 01:54:38,154 root  INFO     SUCCESS load SRNTT/models/SRNTT/srntt_init.npz
+2019-02-28 01:54:38,154 root  INFO     ********** Start testing **********
+2019-02-28 01:54:38,154 root  INFO     Get VGG19 Feature Maps
+2019-02-28 01:54:38,154 root  INFO     	[1/2] Getting feature map of Ref image ...
+2019-02-28 01:54:38,756 root  INFO     	[2/2] Getting feature map of LR->SR Ref image ...
+2019-02-28 01:54:39,335 root  INFO     Patch-Wise Matching and Swapping
+2019-02-28 01:54:39,335 root  INFO     	Patch 001/001
+2019-02-28 01:54:39,335 root  INFO     	Getting feature map of input LR image ...
+2019-02-28 01:54:39,662 root  INFO     	Matching and swapping features ...
+2019-02-28 01:54:46,123 root  INFO     Obtain SR patches
+2019-02-28 01:54:52,662 root  INFO     Saved to demo_testing_srntt-l2/tmp/srntt_00000.png
+2019-02-28 01:54:52,662 root  INFO     Reconstruct SR image
+2019-02-28 01:54:52,842 root  INFO     Saved results to folder demo_testing_srntt-l2
+2019-02-28 02:00:33,379 root  INFO     Testing mode
+2019-02-28 02:00:33,396 root  INFO     Building graph ...
+2019-02-28 02:00:33,414 root  INFO     Build SRNTT model
+2019-02-28 02:00:36,041 root  INFO     Build VGG19 model
+2019-02-28 02:00:39,101 root  INFO     Initialize the swapper
+2019-02-28 02:00:39,103 root  INFO     Loading models ...
+2019-02-28 02:00:43,917 root  INFO     SUCCESS load SRNTT/models/SRNTT/srntt.npz
+2019-02-28 02:00:43,917 root  INFO     ********** Start testing **********
+2019-02-28 02:00:43,917 root  INFO     Get VGG19 Feature Maps
+2019-02-28 02:00:43,917 root  INFO     	[1/2] Getting feature map of Ref image ...
+2019-02-28 02:00:44,539 root  INFO     	[2/2] Getting feature map of LR->SR Ref image ...
+2019-02-28 02:00:45,126 root  INFO     Patch-Wise Matching and Swapping
+2019-02-28 02:00:45,126 root  INFO     	Patch 001/001
+2019-02-28 02:00:45,126 root  INFO     Reconstruct SR image
+2019-02-28 02:00:45,315 root  INFO     Saved results to folder demo_testing_srntt
+2019-02-28 02:00:46,775 root  INFO     Testing mode
+2019-02-28 02:00:46,793 root  INFO     Building graph ...
+2019-02-28 02:00:46,810 root  INFO     Build SRNTT model
+2019-02-28 02:00:49,454 root  INFO     Build VGG19 model
+2019-02-28 02:00:52,024 root  INFO     Initialize the swapper
+2019-02-28 02:00:52,026 root  INFO     Loading models ...
+2019-02-28 02:00:56,784 root  INFO     SUCCESS load SRNTT/models/SRNTT/srntt_init.npz
+2019-02-28 02:00:56,785 root  INFO     ********** Start testing **********
+2019-02-28 02:00:56,785 root  INFO     Get VGG19 Feature Maps
+2019-02-28 02:00:56,785 root  INFO     	[1/2] Getting feature map of Ref image ...
+2019-02-28 02:00:57,388 root  INFO     	[2/2] Getting feature map of LR->SR Ref image ...
+2019-02-28 02:00:57,951 root  INFO     Patch-Wise Matching and Swapping
+2019-02-28 02:00:57,951 root  INFO     	Patch 001/001
+2019-02-28 02:00:57,951 root  INFO     Reconstruct SR image
+2019-02-28 02:00:58,194 root  INFO     Saved results to folder demo_testing_srntt-l2
+2019-02-28 02:01:43,748 root  INFO     Testing mode
+2019-02-28 02:01:43,766 root  INFO     Building graph ...
+2019-02-28 02:01:43,783 root  INFO     Build SRNTT model
+2019-02-28 02:01:46,462 root  INFO     Build VGG19 model
+2019-02-28 02:01:48,938 root  INFO     Initialize the swapper
+2019-02-28 02:01:48,940 root  INFO     Loading models ...
+2019-02-28 02:01:53,397 root  INFO     SUCCESS load SRNTT/models/SRNTT/srntt.npz
+2019-02-28 02:01:53,397 root  INFO     ********** Start testing **********
+2019-02-28 02:01:53,397 root  INFO     Get VGG19 Feature Maps
+2019-02-28 02:01:53,398 root  INFO     	[1/2] Getting feature map of Ref image ...
+2019-02-28 02:01:53,986 root  INFO     	[2/2] Getting feature map of LR->SR Ref image ...
+2019-02-28 02:01:54,552 root  INFO     Patch-Wise Matching and Swapping
+2019-02-28 02:01:54,553 root  INFO     	Patch 001/001
+2019-02-28 02:01:54,553 root  INFO     	Getting feature map of input LR image ...
+2019-02-28 02:01:54,875 root  INFO     	Matching and swapping features ...
+2019-02-28 02:02:01,243 root  INFO     Obtain SR patches
+2019-02-28 02:02:07,673 root  INFO     Time elapsed: PM: 7.845 sec, SR: 6.430 sec
+2019-02-28 02:02:07,760 root  INFO     Saved to demo_testing_srntt/tmp/srntt_00000.png
+2019-02-28 02:02:07,760 root  INFO     Reconstruct SR image
+2019-02-28 02:02:07,942 root  INFO     Saved results to folder demo_testing_srntt
+2019-02-28 02:02:09,535 root  INFO     Testing mode
+2019-02-28 02:02:09,552 root  INFO     Building graph ...
+2019-02-28 02:02:09,570 root  INFO     Build SRNTT model
+2019-02-28 02:02:12,250 root  INFO     Build VGG19 model
+2019-02-28 02:02:14,772 root  INFO     Initialize the swapper
+2019-02-28 02:02:14,774 root  INFO     Loading models ...
+2019-02-28 02:02:19,317 root  INFO     SUCCESS load SRNTT/models/SRNTT/srntt_init.npz
+2019-02-28 02:02:19,317 root  INFO     ********** Start testing **********
+2019-02-28 02:02:19,317 root  INFO     Get VGG19 Feature Maps
+2019-02-28 02:02:19,317 root  INFO     	[1/2] Getting feature map of Ref image ...
+2019-02-28 02:02:19,920 root  INFO     	[2/2] Getting feature map of LR->SR Ref image ...
+2019-02-28 02:02:20,491 root  INFO     Patch-Wise Matching and Swapping
+2019-02-28 02:02:20,491 root  INFO     	Patch 001/001
+2019-02-28 02:02:20,491 root  INFO     	Getting feature map of input LR image ...
+2019-02-28 02:02:20,817 root  INFO     	Matching and swapping features ...
+2019-02-28 02:02:27,282 root  INFO     Obtain SR patches
+2019-02-28 02:02:33,784 root  INFO     Time elapsed: PM: 7.965 sec, SR: 6.502 sec
+2019-02-28 02:02:33,880 root  INFO     Saved to demo_testing_srntt-l2/tmp/srntt_00000.png
+2019-02-28 02:02:33,880 root  INFO     Reconstruct SR image
+2019-02-28 02:02:34,064 root  INFO     Saved results to folder demo_testing_srntt-l2
+2019-02-28 02:15:54,385 root  INFO     Building graph ...
+2019-02-28 02:19:35,566 root  WARNING  The existing model dir default_save_dir/model is removed!
+2019-02-28 02:26:20,500 root  WARNING  The existing model dir demo_training_srntt/model is removed!
+2019-02-28 02:30:15,343 root  INFO     Testing mode
+2019-02-28 02:30:15,362 root  INFO     Building graph ...
+2019-02-28 02:30:15,380 root  INFO     Build SRNTT model
+2019-02-28 02:30:18,098 root  INFO     Build VGG19 model
+2019-02-28 02:30:20,544 root  INFO     Initialize the swapper
+2019-02-28 02:30:20,546 root  INFO     Loading models ...
+2019-02-28 02:30:25,920 root  INFO     SUCCESS load save_data_CUFED_r16_w0/model/srntt.npz
+2019-02-28 02:30:25,920 root  INFO     ********** Start testing **********
+2019-02-28 02:30:25,920 root  INFO     Get VGG19 Feature Maps
+2019-02-28 02:30:25,920 root  INFO     	[1/2] Getting feature map of Ref image ...
+2019-02-28 02:30:26,665 root  INFO     	[2/2] Getting feature map of LR->SR Ref image ...
+2019-02-28 02:30:27,259 root  INFO     Patch-Wise Matching and Swapping
+2019-02-28 02:30:27,260 root  INFO     	Patch 001/001
+2019-02-28 02:30:27,260 root  INFO     	Getting feature map of input LR image ...
+2019-02-28 02:30:27,568 root  INFO     	Matching and swapping features ...
+2019-02-28 02:30:34,129 root  INFO     Obtain SR patches
+2019-02-28 02:30:40,478 root  INFO     Time elapsed: PM: 8.209 sec, SR: 6.349 sec
+2019-02-28 02:30:40,565 root  INFO     Saved to demo_testing_pre-train/tmp/srntt_00000.png
+2019-02-28 02:30:40,565 root  INFO     Reconstruct SR image
+2019-02-28 02:30:40,744 root  INFO     Saved results to folder demo_testing_pre-train
+2019-02-28 02:31:42,903 root  WARNING  The existing model dir demo_training_srntt/model is removed!
+2019-02-28 02:31:42,904 root  INFO     Building graph ...
+2019-02-28 02:32:12,555 root  INFO     Loading models ...
+2019-02-28 02:32:24,989 root  INFO     ********** Start training **********
+2019-02-28 02:33:25,722 root  INFO     Pre-train: Epoch [01/02] Batch [001/001]	ETA: 00:02
+	l_rec = 0.4709 	 l_bp = 0.0000
+2019-02-28 02:34:15,429 root  INFO     Pre-train: Epoch [02/02] Batch [001/001]	ETA: 00:01
+	l_rec = 0.4471 	 l_bp = 0.0000
+2019-02-28 02:36:38,184 root  INFO     Epoch [01/02] Batch [001/001]	ETA: 00:04
+	l_rec = 0.4296	l_bp  = 0.0000
+	l_per = 2.7602	l_tex = 0.8220
+	l_adv = -0.0000	l_dis = -68.8193
+2019-02-28 02:37:51,126 root  INFO     Epoch [02/02] Batch [001/001]	ETA: 00:02
+	l_rec = 0.4363	l_bp  = 0.0000
+	l_per = 2.9320	l_tex = 0.9252
+	l_adv = 0.0000	l_dis = -61.2083
+2019-02-28 02:41:49,483 root  INFO     Building graph ...
+2019-02-28 02:42:19,003 root  INFO     Loading models ...
+2019-02-28 02:42:34,743 root  INFO     SUCCESS load demo_training_srntt/model/srntt.npz
+2019-02-28 02:42:38,654 root  INFO     SUCCESS load demo_training_srntt/model/discrim.npz
+2019-02-28 02:42:38,654 root  INFO     ********** Start training **********
+2019-02-28 02:44:54,725 root  INFO     Epoch [01/02] Batch [001/001]	ETA: 00:04
+	l_rec = 0.4317	l_bp  = 0.0000
+	l_per = 2.9123	l_tex = 0.9204
+	l_adv = -0.0000	l_dis = -131.5611
+2019-02-28 02:46:13,150 root  INFO     Epoch [02/02] Batch [001/001]	ETA: 00:02
+	l_rec = 0.4345	l_bp  = 0.0000
+	l_per = 2.8110	l_tex = 0.8974
+	l_adv = -0.0000	l_dis = -119.0672
