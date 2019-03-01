@@ -1,5 +1,5 @@
 # SRNTT: Image Super-Resolution by Neural Texture Transfer
-Tensorflow implementation of the paper [Image Super-Resolution by Neural Texture Transfer](https://arxiv.org/pdf/1804.03360.pdf) published in CVPR 2019.
+Tensorflow implementation of the paper [Image Super-Resolution by Neural Texture Transfer](http://web.eecs.utk.edu/~zzhang61/project_page/SRNTT/cvpr2019_final.pdf) published in CVPR 2019.
 This is a simplify version, where the reference images are used without augmentation, e.g., rotation and scaling.
 
 [Project Page](http://web.eecs.utk.edu/~zzhang61/project_page/SRNTT/SRNTT.html)
