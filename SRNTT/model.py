@@ -1274,7 +1274,7 @@ class SRNTT(object):
             logging.info('Initialize the swapper')
             self.swaper = Swap(sess=self.sess)
 
-            logging,info('Loading models ...')
+            logging.info('Loading models ...')
             self.sess.run(tf.global_variables_initializer())
 
             # load pre-trained content extractor, including upscaling.
