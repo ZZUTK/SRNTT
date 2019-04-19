@@ -1,15 +1,16 @@
 import tensorflow as tf
+from SRNTT.tensorlayer import *
 import numpy as np
 from glob import glob
-from os.path import exists, join, split
-from os import makedirs, environ
+from os.path import exists, join, split, realpath, dirname
+from os import makedirs
 from SRNTT.model import *
 from SRNTT.vgg19 import *
 from SRNTT.swap import *
 from scipy.misc import imread, imresize
 import argparse
 
-environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+tf.logging.set_verbosity(tf.logging.ERROR)
 
 parser = argparse.ArgumentParser('offline_patchMatch_textureSwap')
 parser.add_argument('--data_folder', type=str, default='data/train/CUFED', help='The dir of dataset: CUFED or DIV2K')
@@ -46,6 +47,15 @@ config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 with tf.Session(config=config) as sess:
     tf.global_variables_initializer().run()
+    model_path = join(dirname(realpath(__file__)), 'SRNTT', 'models', 'SRNTT', 'upscale.npz')
+    if files.load_and_assign_npz(
+            sess=sess,
+            name=model_path,
+            network=net_upscale) is False:
+        raise Exception('FAILED load %s' % model_path)
+    else:
+        print('SUCCESS load %s' % model_path)
+
     print_format = '%%0%dd/%%0%dd' % (len(str(n_files)), len(str(n_files)))
     for i in range(n_files):
         file_name = join(save_path, split(input_files[i])[-1].replace('.png', '.npz'))
