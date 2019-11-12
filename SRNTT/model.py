@@ -340,7 +340,7 @@ class SRNTT(object):
 
         # texture feature maps, range [0, ?]
         self.maps = tuple([tf.placeholder(dtype=tf.float32, shape=[batch_size, m.shape[0], m.shape[1], m.shape[2]])
-                     for m in np.load(files_map[0])['target_map']])
+                     for m in np.load(files_map[0], allow_pickle=True)['target_map']])
 
 
         # weight maps
@@ -487,14 +487,14 @@ class SRNTT(object):
                        for i in idx]
         samples_input = [imresize(img, (input_size, input_size), interp='bicubic').astype(np.float32) / 127.5 - 1
                       for img in samples_in]
-        samples_texture_map_tmp = [np.load(files_map[i])['target_map'] for i in idx]
+        samples_texture_map_tmp = [np.load(files_map[i], allow_pickle=True)['target_map'] for i in idx]
         samples_texture_map = [[] for _ in range(len(samples_texture_map_tmp[0]))]
         for s in samples_texture_map_tmp:
             for i, item in enumerate(samples_texture_map):
                 item.append(s[i])
         samples_texture_map = [np.array(b) for b in samples_texture_map]
         if use_weight_map:
-            samples_weight_map = [np.pad(np.load(files_map[i])['weights'], ((1, 1), (1, 1)), 'edge') for i in idx]
+            samples_weight_map = [np.pad(np.load(files_map[i], allow_pickle=True)['weights'], ((1, 1), (1, 1)), 'edge') for i in idx]
         else:
             samples_weight_map = np.zeros(shape=(batch_size, input_size, input_size))
         frame_size = int(np.sqrt(batch_size))
@@ -598,7 +598,7 @@ class SRNTT(object):
                     batch_imgs = [imread(files_input[i], mode='RGB') for i in sub_idx]
                     batch_truth = [img.astype(np.float32) / 127.5 - 1 for img in batch_imgs]
                     batch_input = [imresize(img, .25, interp='bicubic').astype(np.float32)/127.5-1 for img in batch_imgs]
-                    batch_maps_tmp = [np.load(files_map[i])['target_map'] for i in sub_idx]
+                    batch_maps_tmp = [np.load(files_map[i], allow_pickle=True)['target_map'] for i in sub_idx]
                     batch_maps = [[] for _ in range(len(batch_maps_tmp[0]))]
                     for s in batch_maps_tmp:
                         for i, item in enumerate(batch_maps):
@@ -606,7 +606,7 @@ class SRNTT(object):
                     batch_maps = [np.array(b) for b in batch_maps]
 
                     if use_weight_map:
-                        batch_weights = [np.pad(np.load(files_map[i])['weights'], ((1, 1), (1, 1)), 'edge')
+                        batch_weights = [np.pad(np.load(files_map[i], allow_pickle=True)['weights'], ((1, 1), (1, 1)), 'edge')
                                          for i in sub_idx]
 
                     else:
@@ -670,14 +670,14 @@ class SRNTT(object):
                     batch_imgs = [imread(files_input[i], mode='RGB') for i in sub_idx]
                     batch_truth = [img.astype(np.float32) / 127.5 - 1 for img in batch_imgs]
                     batch_input = [imresize(img, .25, interp='bicubic').astype(np.float32)/127.5-1 for img in batch_imgs]
-                    batch_maps_tmp = [np.load(files_map[i])['target_map'] for i in sub_idx]
+                    batch_maps_tmp = [np.load(files_map[i], allow_pickle=True)['target_map'] for i in sub_idx]
                     batch_maps = [[] for _ in range(len(batch_maps_tmp[0]))]
                     for s in batch_maps_tmp:
                         for i, item in enumerate(batch_maps):
                             item.append(s[i])
                     batch_maps = [np.array(b) for b in batch_maps]
                     if use_weight_map:
-                        batch_weights = [np.pad(np.load(files_map[i])['weights'], ((1, 1), (1, 1)), 'edge')
+                        batch_weights = [np.pad(np.load(files_map[i], allow_pickle=True)['weights'], ((1, 1), (1, 1)), 'edge')
                                          for i in sub_idx]
                     else:
                         batch_weights = np.zeros(shape=(batch_size, input_size, input_size))
