@@ -627,7 +627,7 @@ def load_npz(path='', name='model.npz'):
     #     print('Loading %s, %s' % (key, str(val.shape)))
     # return params
     ## if save_npz save params into a list
-    d = np.load(path + name, encoding='latin1')
+    d = np.load(path + name, allow_pickle=True, encoding='latin1')
     # for val in sorted( d.items() ):
     #     params = val
     #     return params
