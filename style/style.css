@@ -1,0 +1,121 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+html{
+ }
+body{
+    font-family: Palatino Linotype, Helvetica Neue, Helvetica, Arial, sans-serif;
+    /* color: #800000; */
+    font-size: 13pt;
+}
+
+.icon-block {
+  padding: 0px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.active-text{ color: #000000; }
+.active-text:hover{
+   color: #2196F3;
+}
+
+.active-border{
+    border: 0px;
+}
+.active-border:hover{
+    border: 4px;
+    border-style: solid;
+    color: #2196F3;
+    cursor: pointer;
+}
+
+.author{
+    font-size: 16pt;
+}
+.school{
+    font-size: 12pt;
+}
+
+.title{
+    font-size: 20pt;
+    font-weight: bold;
+    color: #800000;
+}
+.subtitle{
+    font-size: 16pt;
+    font-style: italic;
+    font-weight: bold;
+    color: #800000;
+    margin-left: 6%;
+}
+
+pre{
+    font-size: 12pt;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #EEEEEE;
+}
+
+
+.nav-item{
+    font-size: 12pt !important;
+}
+
+.navbar-fixed { background-color: rgba(45,45,45,0.5);transition: background-color 2s ease 0s;}
+.navbar-fixed.opaque { background-color: rgba(45,45,45,0.5);transition: background-color 2s ease 0s; }
+
+
+.fa-folder-open{
+  color: #f4d275;
+}
+
+.footer-copyright{
+  background-color: #e0e0e0 !important;
+}
+
+.caption{
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.method-tag{
+    font-size: 14pt;
+    font-weight: bold;
+    /* width: 2%; */
+    color: #800000;
+}
+.method-tag:hover{
+    /* font-weight: bold; */
+    cursor: pointer;
+    /* border: 0px; */
+    /* border-style: solid; */
+    background-color: #e0e0e0;
+}
+
+.img_selector{
+    text-align: center;
+}
+
+.demo-img{
+    min-height: 350px !important;
+    max-height: 350px !important;
+    /* max-width: 300px !important; */
+}
+
+.note{
+    font-size: 12pt;
+}
+
+.emphasis{
+    font-size: 13pt;
+    font-weight: bold;
+    color: red;
+}
