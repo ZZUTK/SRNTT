@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+  <meta name="author" content="zhifei_zhang">
+  <title>SRNTT</title>
+  <link rel="icon" href="./image/icon/favicon.ico">
+  <!-- CSS  -->
+  <link href="./style/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="./style/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+</head>
+
+<body data-gr-c-s-loaded="true">
+  
+  <!-- ********** Navigator ********** -->
+  <div class="navbar-fixed">
+    <nav class="maroom-box" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+        <ul class="left hide-on-med-and-down">
+          <li><a class="nav-item waves-effect waves-light" href="#home">Home</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#abstract">Abstract</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#network">Network</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#paper">Paper</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#download">Download</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#results">Results</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#reference">References</a></li>
+        </ul>
+
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+  
+  <!-- ********** Title and Authors ********** -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container scrollspy" id="home">
+
+      <h3 class="header center maroon-text">Image Super-Resolution by Neural Texture Transfer</h3>
+
+      <br>
+
+      <div class="row center">
+        <h5 class="header col m3 s12">
+          <div class="author"><a href="http://web.eecs.utk.edu/~zzhang61/" target="blank"><font class="active-text">Zhifei Zhang</font></a></div>
+          <!--<div class="school"><a href="https://www.utk.edu/" target="blank"><font class="active-text">University of Tennessee, Knoxville</font></a></div>-->
+          <div class="school"><a href="https://research.adobe.com/" target="blank"><font class="active-text">Adobe Research</font></a></div>
+        </h5>
+
+        <h5 class="header col m3 s12">
+          <div class="author"><a href="https://research.adobe.com/person/zhaowen-wang/" target="blank"><font class="active-text">Zhaowen Wang</font></a></div>
+          <div class="school"><a href="https://research.adobe.com/" target="blank"><font class="active-text">Adobe Research</font></a></div>
+        </h5>
+
+        <h5 class="header col m3 s12">
+          <div class="author"><a href="https://research.adobe.com/person/zhe-lin/" target="blank"><font class="active-text">Zhe Lin</font></a></div>
+          <div class="school"><a href="https://research.adobe.com/" target="blank"><font class="active-text">Adobe Research</font></a></div>
+        </h5>
+
+        <h5 class="header col m3 s12">
+          <div class="author"><a href="http://web.eecs.utk.edu/~qi/" target="blank"><font class="active-text">Hairong Qi</font></a></div>
+          <div class="school"><a href="https://www.utk.edu/" target="blank"><font class="active-text">University of Tennessee, Knoxville</font></a></div>
+        </h5>
+        
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- ********** Demo ********** -->
+    <div class="section">
+      <div class="row center">
+          <table>
+            <tr>
+              <td>
+                  <img class="responsive-img" src="./image/demo/comic_bicubic.png"><br><div align="center"><b>Bicubic (4x)</b></div>
+              </td>
+              <td>
+                  <img class="responsive-img" src="./image/demo/comic_SRCNN.png"><br><div align="center"><b>SRCNN</b></div>
+              </td>
+              <td>
+                  <img class="responsive-img" src="./image/demo/comic_SRGAN.png"><br><div align="center"><b>SRGAN</b></div>
+              </td>
+              <td>
+                  <img class="responsive-img" src="./image/demo/comic_SRNTT.png"><br><div align="center"><b>SRNTT (ours)</b></div>
+              </td>
+              <td>
+                  <img class="responsive-img" src="./image/demo/comic_Ref.png"><br><div align="center"><b>Reference</b></div>
+              </td>
+            </tr>
+          </table>
+      </div>
+      <div class="row center">
+          <table>
+            <tr>
+              <td>
+                  <img class="responsive-img" src="./image/demo/pics_big_ben_Bicubic.png"><br><div align="center"><b>Bicubic (4x)</b></div>
+              </td>
+              <td>
+                  <img class="responsive-img" src="./image/demo/pics_big_ben_SRGAN.png"><br><div align="center"><b>SRGAN</b></div>
+              </td>
+              <td>
+                  <img class="responsive-img" src="./image/demo/pics_big_ben_CrossNet_hr.png"><br><div align="center"><b>CrossNet</b></div>
+              </td>
+              <td>
+                  <img class="responsive-img" src="./image/demo/pics_big_ben_SRNTT_hr.png"><br><div align="center"><b>SRNTT (ours)</b></div>
+              </td>
+              <!--<td>-->
+                  <!--<img class="responsive-img" src="./image/demo/pics_big_ben_Ref_0.jpg"><br><div align="center"><b>Reference</b></div>-->
+              <!--</td>-->
+            </tr>
+          </table>
+        Zoom-in for better visualization. CrossNet and SRNTT use the same reference image.
+      </div>
+    </div>
+    
+    <!-- ********** Abstract ********** -->
+    <div class="row section scrollspy" id="abstract">
+      <div class="title">Abstract</div><br>
+        Due to the significant information loss in low-resolution (LR) images, it has become extremely challenging to further advance the state-of-the-art of single image super-resolu-tion (SISR). Reference-based super-resolution (RefSR), on the other hand,  has proven to be promising in recovering high-resolution (HR) details when a reference (Ref) image with similar content as that of the LR input is given. However, the quality of RefSR can degrade severely when Ref is less similar. This paper aims to unleash the potential of RefSR by leveraging more texture details from Ref images with stronger robustness even when irrelevant Ref images are provided.
+Inspired by the recent work on image stylization, we formulate the RefSR problem as neural texture transfer. We design an end-to-end deep model which enriches HR details by adaptively transferring the texture from Ref images according to their textural similarity. Instead of matching content in the raw pixel space as done by previous methods, our key contribution is a multi-level matching conducted in the neural space. This matching scheme facilitates multi-scale neural transfer that allows the model to benefit more from those semantically related Ref patches, and gracefully degrade to SISR performance on the least relevant Ref inputs. We build a benchmark dataset for the general research of RefSR, which contains Ref images paired with LR inputs with varying levels of similarity. Both quantitative and qualitative evaluations demonstrate the superiority of our method over state-of-the-art.
+    </div>
+
+    <!-- ********** Network ********** -->
+    <div class="section row scrollspy" id="network">
+      <div class="title">Network Architecture</div><br>
+      <div class="row center">
+        <div class="col offset-l1">&nbsp;</div>
+        <div class="col l9">
+          <div class="caption">Overview of SRNTT</div>
+          <img class="responsive-img" src="./image/network/pics_approach_flow_single_column_simple.png" width="60%">
+        </div>
+        <div class="col offset-l1">&nbsp;</div>
+      </div>
+      <hr color="#800000" width='98%'>
+      <div class="row center">
+        <div class="col offset-l1">&nbsp;</div>
+        <div class="col l9">
+          <div class="caption">Texture Transfer</div>
+          <img class="responsive-img" src="./image/network/pics_approach_transfer.png" width="80%">
+        </div>
+        <div class="col offset-l1">&nbsp;</div>
+        <!--<div class="col l6">-->
+          <!--<div class="caption">Texture transfer</div>-->
+          <!--<img class="responsive-img" src="./image/network/pics_approach_transfer.png">-->
+        <!--</div>-->
+        <!--<div class="col l6">-->
+          <!--<div class="caption">Patch matching and texture swapping</div>-->
+          <!--<img class="responsive-img" src="./image/network/flow_2.png">-->
+        <!--</div>-->
+      </div>
+    </div>
+
+    <!-- ********** Paper ********** -->
+    <div class="row section scrollspy" id="paper">
+      <div class="title">Paper</div><br>
+      <div class="row">
+        <div class="col l3 offset-l2 center">
+          <a href="https://arxiv.org/pdf/1903.00834.pdf" target="_blank">
+            <img src="./image/icon/icon_pdf.png">
+          </a>
+          <br>
+          <a href="comming soon" target="_blank"><font class="active-text">arXiv</font></a>
+        </div>
+        <div class="col l4 offset-l1 center">
+          <a href="cvpr2019_final.pdf" target="_blank">
+            <img src="./image/icon/icon_pdf.png">
+          </a>
+          <br>
+          <a href="cvpr2019_final.pdf" target="_blank"><font class="active-text">Full High-Resolution Version (with supplementary)</font></a>
+        </div>
+    </div>
+
+    <!-- ********** Citation ********** -->
+    <div class="row">
+      <div class="subtitle">Citation</div>
+      <div class="col l10 offset-l1">
+        <p>Zhifei Zhang, Zhaowen Wang, Zhe Lin, and Hairong Qi, "Image Super-Resolution by Neural Texture Transfer", IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2019.</p>
+      </div>
+    </div>
+    <div class="row">  
+      <div class="subtitle">Bibtex</div>
+      <div class="col l10 offset-l1">
+          <pre>
+@inproceedings{ZhangSRNTT2019,
+  author = {Zhang, Zhifei and Wang, Zhaowen and Lin, Zhe and Qi, Hairong}, 
+  title = {Image Super-Resolution by Neural Texture Transfer},
+  booktitle = {arXiv:1903.00834v1},
+  year = {2019}
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- ********** Download ********** -->
+    <div class="section row scrollspy" id="download">
+      <div class="title">Download</div><br>
+      <div class="row">
+        <div class="col m3 s12 center">
+          <a href="https://github.com/ZZUTK/SRNTT" target="_blank">
+            <img src="./image/icon/github.png">
+          </a>
+          <br>
+          <a href="https://github.com/ZZUTK/SRNTT" target="_blank"><font class="active-text">Code (Tensorflow)</font></a>
+        </div>
+
+        <div class="col m3 s12 center">
+          <a href="https://drive.google.com/file/d/1Fa1mopExA9YGG1RxrCZZn7QFTYXLx6ph/view" target="_blank">
+            <img src="./image/icon/icon_zip.png">
+          </a>
+          <br>
+          <a href="https://drive.google.com/file/d/1Fa1mopExA9YGG1RxrCZZn7QFTYXLx6ph/view" target="_blank"><font class="active-text">Testing Dataset (CUFED5, 233MB)</font></a>
+        </div>
+
+        <div class="col m3 s12 center">
+          <a href="https://drive.google.com/open?id=1hGHy36XcmSZ1LtARWmGL5OK1IUdWJi3I" target="_blank">
+            <img src="./image/icon/icon_zip.png">
+          </a>
+          <br>
+          <a href="https://drive.google.com/open?id=1hGHy36XcmSZ1LtARWmGL5OK1IUdWJi3I" target="_blank"><font class="active-text">Training Dataset (CUFED, 1.1GB)</font></a>
+        </div>
+
+        <div class="col m3 s12 center">
+          <a href="https://drive.google.com/open?id=1vhQllNj7Z-ywn1ym0hmXb_L33YE9OzIU" target="_blank">
+            <img src="./image/icon/icon_zip.png">
+          </a>
+          <br>
+          <a href="https://drive.google.com/open?id=1vhQllNj7Z-ywn1ym0hmXb_L33YE9OzIU" target="_blank"><font class="active-text">Training Dataset (DIV2K, 3.7GB)</font></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ********** Results ********** -->
+    <div class="section row scrollspy" id="results">
+      <div class="title">Results</div><br>
+      
+      <!-- ********** Quantitative evaluation ********** -->
+      <div class="row">
+        <div class="subtitle">Quantitative Evaluation</div><br>
+        <div class="col l8 offset-l2">
+          <img class="responsive-img" src="./results/cmp_table.png" width="80%">
+        </div>
+      </div>
+
+      <!-- ********** Qualitative evaluation ********** -->
+      <div class="row">
+        <div class="subtitle">Qualitative Evaluation</div><br>
+        <div class="row center">
+          <img class="responsive-img" src="./results/cmp_figs.png">
+        </div>
+        <div class="caption">Percentage of votes of SRNTT as compared to each of other methods in the user study</div>
+        <div class="row center">
+          <img class="responsive-img" src="./results/pics_survey_survey_avg2.png", width="50%">
+        </div>
+      </div>
+
+      <!-- ********** Texture transfer ********** -->
+      <div class="row">
+        <div class="subtitle">Texture Transfer with Different References (bottom-right)</div><br>
+        <div class="col l10 offset-l1">
+          <img class="responsive-img" src="./results/condition.png">
+        </div>
+      </div>
+
+      <!-- ********** Investigation on extreme conditions ********** -->
+      <div class="row">
+        <div class="subtitle">Investigation on Extreme References</div><br>
+        <div class="col l10 offset-l1">
+          <img class="responsive-img" src="./results/extreme.png">
+        </div>
+      </div>
+
+      <!-- ********** Testing Dataset ********** -->
+      <div class="row"><div class="subtitle">Testing Dataset --- CUFED5</div><br></div>
+      <div class="row center">
+        <div class="caption"><a href="https://drive.google.com/file/d/1Fa1mopExA9YGG1RxrCZZn7QFTYXLx6ph/view" target="_blank"><font class="active-text">CUFED5 Dataset</font></a> --- 126 Testing Images (click on the thumbnails to change the sample image)</div>
+      </div>
+      <div class="row center" id="CUFED5"></div>
+
+      <div class="row center">
+        <table class="centered">
+          <tbady>
+            <tr>
+              <td width="60%">
+                <div class="caption" id="cmp_caption"></div>
+                <div class="center scrollspy" id='cmp_image'></div>
+              </td>
+              <td width="40%">
+                <table class="centered">
+                  <tbody>
+                      <tr>
+                        <td></td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="Original">Original</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="Bicubic">Bicubic</td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="SRCNN">SRCNN</td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="SCN">SCN</td>
+                      </tr>
+                      <tr>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="DRCN">DRCN</td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="LapSRN">LapSRN</td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="MDSR">EDSR</td>
+                      </tr>
+                      <tr>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="SelfEx">SelfEx</td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="Landmark">Landmark</td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="ENet">ENet</td>
+                      </tr>
+                      <tr>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="SRGAN">SRGAN</td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="SRNTT-">SRNTT- (ours)</td>
+                        <td class="method-tag" onmouseover="changeMethod(this.id)" id="SRNTT">SRNTT (ours)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </td>
+            </tr>
+          </tbady>
+        </table>
+      </div>
+      
+      <!-- script for display testing images -->
+      <script type="text/javascript">
+        function pad(num, size) {
+          var s = num+"";
+          while (s.length < size)
+              s = "0" + s;
+          return s;
+        }
+        
+        var data_path = "./dataset/CUFED5_input/";
+        var img_size = "40";
+        var text = "";
+        for(var i=0; i<126; ++i) {
+          text += "<a href=\"#cmp_image\"><img class=\"active-border\" src=\"" + data_path +  pad(i, 3) + "_0_l.png\" width=\"" + img_size + "\" height=\"" + img_size + "\" onclick=\"showResults(" + i + ")\"><\/a>";
+        }
+        document.getElementById("CUFED5").innerHTML = text;
+        
+        var current_id = 1;
+        function showResults(id) {
+          var text = "";
+          text += "<img class=\"responsive-img demo-img\" src=\"" + data_path +  pad(id, 3) + "_0.png\">"; 
+          document.getElementById("cmp_image").innerHTML = text;
+          document.getElementById("cmp_caption").innerHTML = "Original";
+          current_id = id;
+        }
+        showResults(current_id);
+        
+        var result_path = "results/";
+        function changeMethod(method) {
+          if(method == "Original") {
+            showResults(current_id);
+          }
+          else if(method == "Input") {
+            var text = "";
+            text += "<img class=\"responsive-img demo-img\" src=\"" + data_path + pad(current_id, 3) + "_0_l.png\">"; 
+            document.getElementById("cmp_image").innerHTML = text;
+            document.getElementById("cmp_caption").innerHTML = method;
+          }
+          else {
+            var text = "";
+            text += "<img class=\"responsive-img demo-img\" src=\"" + result_path + method + "/" + pad(current_id, 3) + "_0.png\">"; 
+            document.getElementById("cmp_image").innerHTML = text;
+            document.getElementById("cmp_caption").innerHTML = method;
+          }
+        }
+
+      </script>
+
+    </div>
+    
+
+    <!-- ********** References ********** -->
+    <div class="row section scrollspy" id="reference">
+      <div class="title">References</div>
+      <ul>
+        <li> 
+          <a href="http://mmlab.ie.cuhk.edu.hk/projects/SRCNN.html" target="blank">
+            <font class="active-text">
+              • <b>SRCNN</b>: C. Dong et al., “Image superresolution using deep convolutional networks,” TPAMI, 2015.
+            </font>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.ifp.illinois.edu/~dingliu2/iccv15/" target="blank">
+            <font class="active-text">  
+              • <b>SCN</b>: Z. Wang et al., “Deep networks for image super-resolution with sparse prior,” ICCV, 2015.
+            </font>
+          </a>
+        </li>
+        <li>
+          <a href="http://cv.snu.ac.kr/research/DRCN/" target="blank">
+            <font class="active-text">
+              • <b>DRCN</b>: J. Kim et al., “Deeply-recursive convolutional network for image super-resolution,” CVPR, 2016.
+            </font>
+          </a>
+        </li>
+        <li> 
+          <a href="http://vllab.ucmerced.edu/wlai24/LapSRN/" target="blank">
+            <font class="active-text">
+              • <b>LapSRN</b>: W.-S. Lai et al., “Deep Laplacian Pyramid Networks for Fast and Accurate Super-Resolution,” CVPR, 2017.
+            </font>
+          </a>
+        </li>
+        <li> 
+          <a href="https://github.com/LimBee/NTIRE2017" target="blank">
+            <font class="active-text"> 
+              • <b>MDSR</b>: B. Lim et al., “Enhanced Deep Residual Networks for Single Image Super-Resolution,” CVPRW, 2017.
+            </font>
+          </a>
+        </li>
+        <li>
+          <a href="https://sites.google.com/site/jbhuang0604/publications/struct_sr" target="blank">
+            <font class="active-text"> 
+              • <b>SelfExSR</b>: J.-B. Huang et al., “Single image superresolution from transformed self-exemplars,” CVPR, 2015.
+            </font>
+          </a>
+        </li>
+        <li>
+          <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.645.8804&rep=rep1&type=pdf" target="blank">
+            <font class="active-text"> 
+              • <b>Landmark</b>: H. Yue et al., “Single image superresolution from transformed self-exemplars,” TIP, 2013.
+            </font>
+          </a>
+        </li>
+        <li>
+          <a href="https://webdav.tue.mpg.de/pixel/enhancenet/" target="blank">
+            <font class="active-text"> 
+              • <b>ENet</b>: M. Sajjadi et al., “EnhanceNet: Single Image Super-Resolution Through Automated Texture Synthesis,” ICCV, 2017.
+            </font>
+          </a>
+        </li>
+        <li>
+          <a href="https://arxiv.org/pdf/1609.04802.pdf" target="blank">
+            <font class="active-text"> 
+              • <b>SRGAN</b>: C. Ledig et al., “Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network,” CVPR, 2017.
+            </font>
+          </a>
+          <a href="https://github.com/tensorlayer/srgan" target="blank">
+            <font class="active-text">
+              (Implementation)
+            </font>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ********** Foot ********** -->
+  <footer class="page-footer grey lighten-3">
+      <!-- <div class="row"> -->
+        <dir>
+            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=800000&w=590&t=tt&d=9E5yuPoTz50O-ZmdoM3TzpuTvDRCmi8ZVlEuBwah-_8&co=eeeeee&ct=880000&cmn=1e88e5&cmo=f57f17'></script>
+
+        </dir>
+      <!-- </div> -->
+    
+    <div class="footer-copyright center maroon-text">
+      Copyright © Zhifei Zhang 2018
+    </div>
+  </footer>
+
+  <!-- ********** Script for sliding style when switching between tabs ********** -->
+  <script src="./style/jquery-2.1.1.min.js"></script>
+  <script src="./style/materialize.js"></script>
+  <script src="./style/init.js"></script>
+
+  
+
+  <!-- <div class="hiddendiv common"></div><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div><div class="jvectormap-tip"></div> -->
+
+</body>
+</html>
