@@ -4,7 +4,7 @@ This is a simplified version, where the reference images are used without augmen
 
 [Project Page](https://zzutk.github.io/SRNTT-Project-Page/)
 
-[Pytorch Version](https://github.com/S-aiueo32/srntt-pytorch)
+[Pytorch Implementation](https://github.com/S-aiueo32/srntt-pytorch)
 
 
 ## Contents
