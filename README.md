@@ -3,6 +3,7 @@ Tensorflow implementation of the paper [Image Super-Resolution by Neural Texture
 This is a simplified version, where the reference images are used without augmentation, e.g., rotation and scaling.
 
 [Project Page](https://zzutk.github.io/SRNTT-Project-Page/)
+[Pytorch Version](https://github.com/S-aiueo32/srntt-pytorch)
 
 
 ## Contents
