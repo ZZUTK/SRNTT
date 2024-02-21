@@ -45,7 +45,7 @@ To speed up the training process, patch matching and swapping are performed offl
 and the swapped feature maps will be saved to `data/train/CUFED/map_321` (see [`offline_patchMatch_textureSwap.py`](offline_patchMatch_textureSwap.py) for more details). 
 If you want to train your own model, please prepare your own training set or download either of the following demo training sets:
 
-**Please download with this [link](https://drive.google.com/drive/folders/13BGwJMQfK6xhCNXN0y53dctthVloxniz?usp=sharing) since the following downloading script is no longer available.**
+:warning:**Please download with this [link](https://drive.google.com/drive/folders/13BGwJMQfK6xhCNXN0y53dctthVloxniz?usp=sharing) since the following downloading script is no longer available.**
 
 ##### 11,485 input-reference pairs (size 320x320) extracted from [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/). 
 Each pair is extracted from the same image without overlap but considering scaling and rotation. 
