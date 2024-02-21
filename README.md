@@ -58,9 +58,9 @@ $ python download_dataset.py --dataset_name DIV2K
 Each pair is extracted from the similar images, including five degrees of similarity. 
 
 
-~~```bash
+```bash
 $ python download_dataset.py --dataset_name CUFED
-```~~
+```
 
 <a name="Testing_set">
 
